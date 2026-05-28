@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { motion } from "framer-motion";
-import { Star, CheckCircle, ShieldCheck, MapPin, Phone, Users, Clock, ArrowRight, BadgeCheck, Sparkles, Home as HomeIcon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, CheckCircle, ShieldCheck, MapPin, Phone, Users, Clock, ArrowRight, BadgeCheck, Sparkles, Home as HomeIcon, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import logoPath from "@assets/hh-logo.jpg";
 
 import {
@@ -79,6 +79,36 @@ export default function Home() {
   const [miniName, setMiniName] = useState("");
   const [miniPhone, setMiniPhone] = useState("");
   const [miniService, setMiniService] = useState("");
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6];
+  const galleryAlts = [
+    "Luxury marble bathroom with clawfoot tub",
+    "Modern walk-in shower with floor-to-ceiling tile",
+    "Spa-style bathroom renovation",
+    "Double vanity bathroom remodel",
+    "Custom tile and fixtures upgrade",
+    "Contemporary bathroom with freestanding tub",
+  ];
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const prevPhoto = useCallback(() => setLightboxIndex(i => i !== null ? (i - 1 + galleryImages.length) % galleryImages.length : null), [galleryImages.length]);
+  const nextPhoto = useCallback(() => setLightboxIndex(i => i !== null ? (i + 1) % galleryImages.length : null), [galleryImages.length]);
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevPhoto();
+      if (e.key === "ArrowRight") nextPhoto();
+    };
+    window.addEventListener("keydown", handler);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handler);
+      document.body.style.overflow = "";
+    };
+  }, [lightboxIndex, closeLightbox, prevPhoto, nextPhoto]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -170,10 +200,13 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">
-              <a href="tel:5618884488" className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg px-6 py-3.5 text-base transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50" data-testid="button-call-hero">
-                <Phone className="w-4 h-4" />
-                Call (561) 888-4488
-              </a>
+              <div className="relative inline-flex">
+                <span className="absolute inset-0 rounded-lg bg-primary animate-ping opacity-20 pointer-events-none" />
+                <a href="tel:5618884488" className="relative inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg px-6 py-3.5 text-base transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50" data-testid="button-call-hero">
+                  <Phone className="w-4 h-4" />
+                  Call (561) 888-4488
+                </a>
+              </div>
               <a href="#consultation-form" className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg px-6 py-3.5 text-base border border-white/30 backdrop-blur-sm transition-all" data-testid="button-form-scroll-hero">
                 Get Free Quote
                 <ArrowRight className="w-4 h-4" />
@@ -542,22 +575,28 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            {[gallery1, gallery2, gallery3, gallery4, gallery5, gallery6].map((img, i) => (
+            {galleryImages.map((img, i) => (
               <motion.div
                 key={i}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={stagger(i)}
-                className={`group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 ${i === 0 ? "md:col-span-1 md:row-span-2 aspect-[3/4]" : "aspect-square"}`}
+                className={`group relative overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 cursor-zoom-in ${i === 0 ? "md:col-span-1 md:row-span-2 aspect-[3/4]" : "aspect-square"}`}
+                onClick={() => setLightboxIndex(i)}
               >
                 <img
                   src={img}
-                  alt={`H&H Signature Renovations project ${i + 1}`}
+                  alt={galleryAlts[i]}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   style={{ objectPosition: "center 40%" }}
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                    <ZoomIn className="w-5 h-5 text-secondary" />
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -775,6 +814,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Service Cities ───────────────────────────────── */}
+      <section className="py-20 bg-secondary text-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <p className="text-primary text-sm font-bold uppercase tracking-widest mb-3">Where We Work</p>
+            <h2 className="text-2xl md:text-3xl font-serif font-bold">
+              Proudly Serving Palm Beach County &amp; South Florida
+            </h2>
+            <p className="text-white/60 mt-3 text-sm max-w-xl mx-auto">
+              H&amp;H Signature Renovations serves homeowners across the Palm Beach area. Don't see your city? Call us — we likely serve it.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            {[
+              "West Palm Beach", "Boca Raton", "Delray Beach", "Boynton Beach",
+              "Palm Beach Gardens", "Jupiter", "Wellington", "Lake Worth",
+              "Palm Beach", "Riviera Beach", "Greenacres", "Royal Palm Beach",
+              "Coral Springs", "Deerfield Beach", "Lantana", "Tequesta",
+            ].map(city => (
+              <div key={city} className="flex items-center gap-2 bg-white/8 hover:bg-white/14 border border-white/10 rounded-lg px-4 py-3 transition-colors">
+                <MapPin className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                <span className="text-sm font-medium text-white/85">{city}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <a href="tel:5618884488" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-bold text-sm transition-colors">
+              <Phone className="w-4 h-4" />
+              Not sure we cover your area? Call (561) 888-4488
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── Final CTA ────────────────────────────────────── */}
       <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0">
@@ -824,15 +897,83 @@ export default function Home() {
 
       {/* ── Mobile Sticky CTA ────────────────────────────── */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-100 shadow-[0_-4px_20px_rgba(0,0,0,0.12)] p-3">
-        <a
-          href="tel:5618884488"
-          className="flex items-center justify-center gap-2 w-full bg-primary hover:bg-primary/90 text-white font-bold rounded-xl py-4 text-base transition-all"
-          data-testid="button-call-sticky-mobile"
-        >
-          <Phone className="w-5 h-5" />
-          Call Now: (561) 888-4488
-        </a>
+        <div className="relative">
+          <span className="absolute inset-0 rounded-xl bg-primary animate-ping opacity-20 pointer-events-none" />
+          <a
+            href="tel:5618884488"
+            className="relative flex items-center justify-center gap-2 w-full bg-primary hover:bg-primary/90 text-white font-bold rounded-xl py-4 text-base transition-all"
+            data-testid="button-call-sticky-mobile"
+          >
+            <Phone className="w-5 h-5" />
+            Call Now: (561) 888-4488
+          </a>
+        </div>
       </div>
+
+      {/* ── Lightbox ─────────────────────────────────────── */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            key="lightbox"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center"
+            onClick={closeLightbox}
+          >
+            {/* Close */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 w-11 h-11 bg-white/10 hover:bg-white/25 rounded-full flex items-center justify-center text-white transition-colors z-10"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Counter */}
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 text-white/60 text-sm font-medium">
+              {lightboxIndex + 1} / {galleryImages.length}
+            </div>
+
+            {/* Prev */}
+            <button
+              onClick={e => { e.stopPropagation(); prevPhoto(); }}
+              className="absolute left-3 md:left-6 w-12 h-12 bg-white/10 hover:bg-white/25 rounded-full flex items-center justify-center text-white transition-colors z-10"
+              aria-label="Previous photo"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Image */}
+            <motion.img
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.2 }}
+              src={galleryImages[lightboxIndex]}
+              alt={galleryAlts[lightboxIndex]}
+              className="max-h-[85vh] max-w-[85vw] object-contain rounded-lg shadow-2xl"
+              onClick={e => e.stopPropagation()}
+            />
+
+            {/* Next */}
+            <button
+              onClick={e => { e.stopPropagation(); nextPhoto(); }}
+              className="absolute right-3 md:right-6 w-12 h-12 bg-white/10 hover:bg-white/25 rounded-full flex items-center justify-center text-white transition-colors z-10"
+              aria-label="Next photo"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            {/* Caption */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-xs text-center max-w-xs">
+              {galleryAlts[lightboxIndex]}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
