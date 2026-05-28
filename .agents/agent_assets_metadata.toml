@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "8vgTyCIzHBazvZEDnlNoz"
+uri = "file://artifacts/hh-landing/src/assets/images/hero-bg.png"
+type = "image"
+title = "Hero bathroom background"
+
+[[generated]]
+id = "fGnD5DyeeipbjaiOXK1VH"
+uri = "file://artifacts/hh-landing/src/assets/images/service-full-remodel.png"
+type = "image"
+title = "Full bathroom remodel service"
+
+[[generated]]
+id = "QHHHZxfBCJQJp4kEWmKLa"
+uri = "file://artifacts/hh-landing/src/assets/images/service-shower.png"
+type = "image"
+title = "Shower and tub replacement"
+
+[[generated]]
+id = "w7NedbgVzgU1FgEcTWO4B"
+uri = "file://artifacts/hh-landing/src/assets/images/service-tile.png"
+type = "image"
+title = "Tile installation service"
+
+[[generated]]
+id = "-Ru8L1kiAyWZ55miOw1KL"
+uri = "file://artifacts/hh-landing/src/assets/images/service-vanity.png"
+type = "image"
+title = "Vanity upgrades service"
+
+[[generated]]
+id = "6OlCfOfrbQwaGWstn15OQ"
+uri = "file://artifacts/hh-landing/src/assets/images/service-ada.png"
+type = "image"
+title = "ADA accessible bathroom"
+
+[[generated]]
+id = "mc-jtL6AM7oC1FApF0afo"
+uri = "file://artifacts/hh-landing/src/assets/images/service-flooring.png"
+type = "image"
+title = "Flooring and lighting"
+
+[[generated]]
+id = "p2w7BXTndWB3J8xbFYSaO"
+uri = "file://artifacts/hh-landing/src/assets/images/gallery-1.png"
+type = "image"
+title = "Gallery walk-in shower"
+
+[[generated]]
+id = "uhFkbLKoxcqsTh5Fs--6G"
+uri = "file://artifacts/hh-landing/src/assets/images/gallery-2.png"
+type = "image"
+title = "Gallery floating vanity"
+
+[[generated]]
+id = "C47XHbwy5g-oB4WY4qvhm"
+uri = "file://artifacts/hh-landing/src/assets/images/gallery-3.png"
+type = "image"
+title = "Gallery full bathroom"
