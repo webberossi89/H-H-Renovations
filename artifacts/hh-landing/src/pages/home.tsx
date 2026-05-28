@@ -27,19 +27,19 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
-import heroBg from "@assets/image_1779995714268.png";
-import serviceFullRemodel from "@assets/hh_project_photos/photo_46.jpg";
-import serviceShower from "@assets/hh_project_photos/photo_36.jpg";
-import serviceTile from "@assets/hh_project_photos/photo_13.jpg";
-import serviceVanity from "@assets/hh_project_photos/photo_65.jpg";
-import serviceAda from "@assets/hh_project_photos/photo_04.jpg";
-import serviceFlooring from "@assets/hh_project_photos/photo_12.jpg";
-import gallery1 from "@assets/hh_project_photos/photo_32.jpg";
-import gallery2 from "@assets/hh_project_photos/photo_37.jpg";
-import gallery3 from "@assets/hh_project_photos/photo_14.jpg";
+import heroBg from "@assets/hh_project_photos/photo_22.jpg";
+import serviceFullRemodel from "@assets/hh_project_photos/photo_15.jpg";
+import serviceShower from "@assets/hh_project_photos/photo_17.jpg";
+import serviceTile from "@assets/hh_project_photos/photo_03.jpg";
+import serviceVanity from "@assets/hh_project_photos/photo_16.jpg";
+import serviceAda from "@assets/hh_project_photos/photo_33.jpg";
+import serviceFlooring from "@assets/hh_project_photos/photo_57.jpg";
+import gallery1 from "@assets/hh_project_photos/photo_22.jpg";
+import gallery2 from "@assets/hh_project_photos/photo_25.jpg";
+import gallery3 from "@assets/hh_project_photos/photo_29.jpg";
 import gallery4 from "@assets/hh_project_photos/photo_31.jpg";
-import gallery5 from "@assets/hh_project_photos/photo_40.jpg";
-import gallery6 from "@assets/hh_project_photos/photo_35.jpg";
+import gallery5 from "@assets/hh_project_photos/photo_55.jpg";
+import gallery6 from "@assets/hh_project_photos/photo_34.jpg";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -106,7 +106,7 @@ export default function Home() {
       {/* 2. Hero Section */}
       <section className="relative pt-24 pb-32 lg:pt-36 lg:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="Beautiful bathroom remodel" className="w-full h-full object-cover" style={{ objectPosition: 'center 55%' }} />
+          <img src={heroBg} alt="Beautiful bathroom remodel" className="w-full h-full object-cover" style={{ objectPosition: 'center 45%' }} />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
