@@ -27,16 +27,19 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
-import heroBg from "@/assets/images/hero-bg.png";
-import serviceFullRemodel from "@/assets/images/service-full-remodel.png";
-import serviceShower from "@/assets/images/service-shower.png";
-import serviceTile from "@/assets/images/service-tile.png";
-import serviceVanity from "@/assets/images/service-vanity.png";
-import serviceAda from "@/assets/images/service-ada.png";
-import serviceFlooring from "@/assets/images/service-flooring.png";
-import gallery1 from "@/assets/images/gallery-1.png";
-import gallery2 from "@/assets/images/gallery-2.png";
-import gallery3 from "@/assets/images/gallery-3.png";
+import heroBg from "@assets/hh_project_photos/photo_55.jpg";
+import serviceFullRemodel from "@assets/hh_project_photos/photo_46.jpg";
+import serviceShower from "@assets/hh_project_photos/photo_36.jpg";
+import serviceTile from "@assets/hh_project_photos/photo_13.jpg";
+import serviceVanity from "@assets/hh_project_photos/photo_65.jpg";
+import serviceAda from "@assets/hh_project_photos/photo_04.jpg";
+import serviceFlooring from "@assets/hh_project_photos/photo_12.jpg";
+import gallery1 from "@assets/hh_project_photos/photo_32.jpg";
+import gallery2 from "@assets/hh_project_photos/photo_37.jpg";
+import gallery3 from "@assets/hh_project_photos/photo_14.jpg";
+import gallery4 from "@assets/hh_project_photos/photo_31.jpg";
+import gallery5 from "@assets/hh_project_photos/photo_40.jpg";
+import gallery6 from "@assets/hh_project_photos/photo_35.jpg";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -578,7 +581,7 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[gallery1, gallery2, gallery3, serviceFullRemodel, serviceShower, serviceVanity].map((img, i) => (
+            {[gallery1, gallery2, gallery3, gallery4, gallery5, gallery6].map((img, i) => (
               <div key={i} className="group relative aspect-square overflow-hidden rounded-lg">
                 <img src={img} alt={`Gallery image ${i+1}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
