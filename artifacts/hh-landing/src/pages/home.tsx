@@ -27,7 +27,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
-import heroBg from "@assets/hh_project_photos/photo_55.jpg";
+import heroBg from "@assets/image_1779995714268.png";
 import serviceFullRemodel from "@assets/hh_project_photos/photo_46.jpg";
 import serviceShower from "@assets/hh_project_photos/photo_36.jpg";
 import serviceTile from "@assets/hh_project_photos/photo_13.jpg";
@@ -106,7 +106,7 @@ export default function Home() {
       {/* 2. Hero Section */}
       <section className="relative pt-24 pb-32 lg:pt-36 lg:pb-40 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="Beautiful bathroom remodel" className="w-full h-full object-cover" />
+          <img src={heroBg} alt="Beautiful bathroom remodel" className="w-full h-full object-cover" style={{ objectPosition: 'center 55%' }} />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
