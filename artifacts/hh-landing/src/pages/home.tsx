@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { YouformEmbed } from "@/components/youform-embed";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -123,9 +124,7 @@ export default function Home() {
 
   function handleMiniSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (miniName.trim().length >= 2 && miniPhone.trim().length >= 10) {
-      setMiniSubmitted(true);
-    }
+    document.getElementById("consultation-form")?.scrollIntoView({ behavior: "smooth" });
   }
 
   const stripPhotos = [strip1, strip2, strip3, strip4, strip5, strip6, strip7, strip8];
@@ -652,134 +651,7 @@ export default function Home() {
               </div>
 
               <div className="md:col-span-3 p-8 lg:p-10">
-                {isSubmitted ? (
-                  <div className="h-full flex flex-col items-center justify-center text-center py-12" data-testid="form-success-message">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                      <CheckCircle className="w-8 h-8 text-green-600" />
-                    </div>
-                    <h3 className="text-2xl font-serif font-bold text-secondary mb-2">Thank You!</h3>
-                    <p className="text-gray-500 text-lg mb-6 max-w-sm">Your request has been received. Our team will be in touch shortly.</p>
-                    <Button onClick={() => setIsSubmitted(false)} variant="outline" size="lg">Submit Another Request</Button>
-                  </div>
-                ) : (
-                  <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <FormField control={form.control} name="name" render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-semibold text-gray-700">Name *</FormLabel>
-                            <FormControl><Input placeholder="John Smith" {...field} data-testid="input-name" className="rounded-lg" /></FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} />
-                        <FormField control={form.control} name="phone" render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-semibold text-gray-700">Phone *</FormLabel>
-                            <FormControl><Input type="tel" placeholder="(561) 000-0000" {...field} data-testid="input-phone" className="rounded-lg" /></FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} />
-                      </div>
-
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <FormField control={form.control} name="email" render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-semibold text-gray-700">Email *</FormLabel>
-                            <FormControl><Input type="email" placeholder="john@email.com" {...field} data-testid="input-email" className="rounded-lg" /></FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} />
-                        <FormField control={form.control} name="address" render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-semibold text-gray-700">City or Zip</FormLabel>
-                            <FormControl><Input placeholder="Boca Raton, FL" {...field} data-testid="input-address" className="rounded-lg" /></FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )} />
-                      </div>
-
-                      <FormField control={form.control} name="services" render={() => (
-                        <FormItem>
-                          <FormLabel className="font-semibold text-gray-700 text-sm">What are you looking to remodel? *</FormLabel>
-                          <div className="grid grid-cols-2 gap-2 mt-2">
-                            {["Shower", "Tub", "Vanity", "Tile", "Full bathroom", "Not sure yet"].map((item) => (
-                              <FormField key={item} control={form.control} name="services" render={({ field }) => (
-                                <FormItem className="flex items-center space-x-2.5 space-y-0 rounded-lg border border-gray-200 px-3 py-2.5 hover:border-primary/40 transition-colors cursor-pointer">
-                                  <FormControl>
-                                    <Checkbox
-                                      checked={field.value?.includes(item)}
-                                      onCheckedChange={(checked) => {
-                                        return checked
-                                          ? field.onChange([...field.value, item])
-                                          : field.onChange(field.value?.filter((v) => v !== item));
-                                      }}
-                                      data-testid={`checkbox-service-${item.toLowerCase().replace(/\s+/g, "-")}`}
-                                    />
-                                  </FormControl>
-                                  <FormLabel className="font-medium text-sm cursor-pointer">{item}</FormLabel>
-                                </FormItem>
-                              )} />
-                            ))}
-                          </div>
-                          <FormMessage />
-                        </FormItem>
-                      )} />
-
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <FormField control={form.control} name="budget" render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-semibold text-gray-700">Approximate Budget</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger data-testid="select-budget" className="rounded-lg"><SelectValue placeholder="Select budget" /></SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="under-10k">Under $10k</SelectItem>
-                                <SelectItem value="10k-25k">$10k–$25k</SelectItem>
-                                <SelectItem value="25k-50k">$25k–$50k</SelectItem>
-                                <SelectItem value="50k-plus">$50k+</SelectItem>
-                                <SelectItem value="not-sure">Not sure</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )} />
-                        <FormField control={form.control} name="timeline" render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="font-semibold text-gray-700">Desired Timeline</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger data-testid="select-timeline" className="rounded-lg"><SelectValue placeholder="Select timeline" /></SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="asap">ASAP</SelectItem>
-                                <SelectItem value="1-3-months">1–3 months</SelectItem>
-                                <SelectItem value="3-6-months">3–6 months</SelectItem>
-                                <SelectItem value="just-planning">Just planning</SelectItem>
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )} />
-                      </div>
-
-                      <FormField control={form.control} name="message" render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-semibold text-gray-700">Anything else? (Optional)</FormLabel>
-                          <FormControl>
-                            <Textarea placeholder="Tell us about your vision, style preferences, or any questions…" className="resize-none rounded-lg" {...field} data-testid="textarea-message" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )} />
-
-                      <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-white font-bold h-12 rounded-lg shadow-lg shadow-primary/25" data-testid="button-submit-form">
-                        Get My Free Consultation →
-                      </Button>
-                      <p className="text-center text-xs text-gray-400">No pressure. No obligation. Local Palm Beach team.</p>
-                    </form>
-                  </Form>
-                )}
+                <YouformEmbed formId="mqxfscuq" />
               </div>
             </div>
           </div>
