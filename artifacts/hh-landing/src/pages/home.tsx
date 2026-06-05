@@ -256,7 +256,7 @@ export default function Home() {
               { value: "88+", label: "Google Reviews" },
               { value: "5★", label: "Average Rating" },
               { value: "100%", label: "Licensed & Insured" },
-              { value: "Local", label: "Trusted Local Experts" },
+              { value: "Local", label: "Palm Beach Experts" },
             ].map(({ value, label }, i) => (
               <div key={i} className="px-6 py-6 text-center">
                 <div className="text-2xl font-serif font-bold text-primary">{value}</div>
@@ -404,21 +404,21 @@ export default function Home() {
             <div>
               <p className="text-primary text-sm font-bold uppercase tracking-widest mb-3">Why Choose H&amp;H</p>
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-                Homeowners Trust Us For Quality Renovations
+                Palm Beach Homeowners Trust Us For Quality Renovations
               </h2>
               <p className="text-white/70 text-lg leading-relaxed mb-6">
-                Founded and led by <span className="text-white font-semibold">Tristan Dankert</span>, H&amp;H is a local crew that treats your home with the same respect and precision we'd give our own. Tristan stays hands-on from the first walkthrough to the final reveal, so every project gets real attention, honest communication, and zero shortcuts.
+                Founded and led by <span className="text-white font-semibold">Tristan Dankert</span>, H&amp;H is a local Palm Beach crew that treats your home with the same respect and precision we'd give our own. Tristan stays hands-on from the first walkthrough to the final reveal, so every project gets real attention, honest communication, and zero shortcuts.
               </p>
               <div className="flex items-center gap-3 mb-10">
                 <div className="w-12 h-12 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold text-base flex-shrink-0">TD</div>
                 <div>
                   <p className="text-white font-bold text-sm leading-tight">Tristan Dankert</p>
-                  <p className="text-white/50 text-xs">Owner &amp; the H&amp;H crew · Serving South Florida</p>
+                  <p className="text-white/50 text-xs">Owner &amp; the H&amp;H crew · Serving Palm Beach</p>
                 </div>
               </div>
               <div className="space-y-4">
                 {[
-                  "A local renovation crew, never a national chain",
+                  "Local Palm Beach renovation experts, never a national chain",
                   "Licensed, insured, and fully experienced professionals",
                   "88+ Google Reviews with an excellent rating",
                   "Known for communication, cleanliness, and attention to detail",
@@ -437,7 +437,7 @@ export default function Home() {
               {[
                 { icon: Star, value: "88+", label: "Verified Reviews", sub: "Google & Houzz" },
                 { icon: ShieldCheck, value: "100%", label: "Licensed & Insured", sub: "Florida Certified" },
-                { icon: HomeIcon, value: "Local", label: "Local Team", sub: "Not a franchise" },
+                { icon: HomeIcon, value: "Local", label: "Palm Beach Team", sub: "Not a franchise" },
                 { icon: BadgeCheck, value: "5★", label: "Average Rating", sub: "Across all platforms" },
               ].map(({ icon: Icon, value, label, sub }, i) => (
                 <motion.div
@@ -465,7 +465,7 @@ export default function Home() {
           <div className="text-center mb-14">
             <p className="text-primary text-sm font-bold uppercase tracking-widest mb-3">Real Reviews</p>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">
-              What Homeowners Are Saying
+              What Palm Beach Homeowners Are Saying
             </h2>
           </div>
 
@@ -521,7 +521,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-secondary">
               See The Craftsmanship For Yourself
             </h2>
-            <p className="text-gray-500 mt-4">Real H&amp;H projects. Real homes. Real results.</p>
+            <p className="text-gray-500 mt-4">Real H&amp;H projects. Real Palm Beach homes.</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
@@ -570,7 +570,7 @@ export default function Home() {
                   <p className="text-primary text-xs font-bold uppercase tracking-widest mb-3">Free Consultation</p>
                   <h3 className="text-2xl lg:text-3xl font-serif font-bold mb-4 leading-tight">Get Your Free Bathroom Remodel Consultation</h3>
                   <p className="text-white/70 text-base leading-relaxed">
-                    No pressure. No obligation. Just expert guidance from a local renovation team that delivers real results.
+                    No pressure. No obligation. Just expert guidance from a local Palm Beach renovation team that delivers real results.
                   </p>
                 </div>
 
@@ -590,7 +590,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-xs text-white/50 uppercase tracking-wider font-semibold mb-0.5">Service Area</p>
-                      <p className="font-bold">South Florida</p>
+                      <p className="font-bold">Palm Beach &amp; South Florida</p>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2 mt-4">
@@ -709,7 +709,7 @@ export default function Home() {
               <Phone className="w-4 h-4" /> (561) 888-4488
             </a>
             <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" /> Serving South Florida
+              <MapPin className="w-4 h-4" /> Serving Palm Beach &amp; South Florida
             </span>
           </div>
           <div className="border-t border-white/8 pt-6 text-xs text-white/30">
