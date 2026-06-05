@@ -215,12 +215,12 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-4">
               {[
-                { icon: Star, label: "88+ Google Reviews" },
-                { icon: ShieldCheck, label: "Licensed & Insured" },
-                { icon: BadgeCheck, label: "5-Star Rated" },
-              ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 text-sm text-white/80 font-medium">
-                  <Icon className="w-4 h-4 text-primary" />
+                { icon: Star, label: "88+ Google Reviews", color: "text-yellow-400 fill-current" },
+                { icon: ShieldCheck, label: "Licensed & Insured", color: "text-primary" },
+                { icon: BadgeCheck, label: "5-Star Rated", color: "text-yellow-400" },
+              ].map(({ icon: Icon, label, color }) => (
+                <div key={label} className="flex items-center gap-2 text-sm text-white/85 font-medium">
+                  <Icon className={`w-4 h-4 ${color}`} />
                   {label}
                 </div>
               ))}
@@ -343,7 +343,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-10">
-            <a href="#consultation-form" className="inline-flex items-center gap-2 bg-secondary text-white font-semibold rounded-lg px-7 py-3.5 hover:bg-secondary/90 transition-colors shadow-md">
+            <a href="#consultation-form" className="inline-flex items-center gap-2 bg-primary text-white font-bold rounded-lg px-7 py-3.5 hover:bg-primary/90 hover:-translate-y-0.5 transition-all shadow-lg shadow-primary/25">
               Get Your Free Estimate
               <ArrowRight className="w-4 h-4" />
             </a>
@@ -391,7 +391,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <a href="tel:5618884488" className="inline-flex items-center gap-2 bg-primary text-white font-bold rounded-lg px-7 py-3.5 hover:bg-primary/90 transition-colors shadow-lg shadow-primary/25">
+            <a href="tel:5618884488" className="inline-flex items-center gap-2 bg-primary text-white font-bold rounded-lg px-7 py-3.5 hover:bg-primary/90 hover:-translate-y-0.5 transition-all shadow-lg shadow-primary/25">
               <Phone className="w-4 h-4" />
               Call to Start: (561) 888-4488
             </a>
@@ -629,7 +629,7 @@ export default function Home() {
               { q: "Are you licensed and insured?", a: "Yes. Our team is composed of licensed, insured, and experienced professionals operating in Palm Beach County and South Florida." },
               { q: "What areas do you serve?", a: "We serve the Palm Beaches and surrounding areas throughout South Florida, including Boca Raton, Delray Beach, West Palm Beach, and nearby communities." },
               { q: "Can you help me choose the design?", a: "Absolutely. We emphasize tailored solutions and take time to understand each homeowner's style, preferences, and lifestyle goals before recommending finishes." },
-              { q: "How do I get started?", a: "Call (561) 888-4488 or fill out the consultation form above and we'll be in touch promptly to discuss your project." },
+              { q: "How do I get started?", a: "Give us a call or fill out the consultation form above, and we'll be in touch promptly to discuss your project and next steps." },
             ].map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="bg-gray-50 border border-gray-100 rounded-xl px-6 data-[state=open]:border-primary/30 data-[state=open]:bg-blue-50/30 transition-colors">
                 <AccordionTrigger className="text-base font-bold text-secondary hover:text-primary transition-colors text-left py-5 hover:no-underline">{faq.q}</AccordionTrigger>
@@ -666,9 +666,9 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <a href="tel:5618884488" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-bold text-sm transition-colors">
+            <a href="tel:5618884488" className="inline-flex items-center gap-2 bg-primary text-white hover:bg-primary/90 hover:-translate-y-0.5 font-bold text-sm rounded-lg px-6 py-3.5 transition-all shadow-lg shadow-primary/25">
               <Phone className="w-4 h-4" />
-              Not sure we cover your area? Call (561) 888-4488
+              Not sure we cover your area? Call us
             </a>
           </div>
         </div>
@@ -689,11 +689,11 @@ export default function Home() {
             Warm light. Tile you'll run your hand across just because. Finishes that still feel right years from now. Tell us what you're picturing and we'll make it real.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:5618884488" className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg px-8 py-4 text-lg transition-all shadow-xl shadow-primary/30" data-testid="button-call-footer">
+            <a href="tel:5618884488" className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 hover:-translate-y-0.5 text-white font-bold rounded-lg px-8 py-4 text-lg transition-all shadow-xl shadow-primary/30" data-testid="button-call-footer">
               <Phone className="w-5 h-5" />
               Call Now: (561) 888-4488
             </a>
-            <a href="#consultation-form" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg px-8 py-4 text-lg border border-white/25 backdrop-blur-sm transition-all" data-testid="button-form-scroll-footer">
+            <a href="#consultation-form" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 hover:-translate-y-0.5 text-white font-semibold rounded-lg px-8 py-4 text-lg border border-white/25 backdrop-blur-sm transition-all" data-testid="button-form-scroll-footer">
               Request Free Consultation
               <ArrowRight className="w-5 h-5" />
             </a>
@@ -702,21 +702,62 @@ export default function Home() {
       </section>
 
       {/* ── Footer ───────────────────────────────────────── */}
-      <footer className="bg-[#111827] text-white/60 py-12 pb-28 md:pb-12">
-        <div className="container mx-auto px-4 text-center">
-          <img src={logoPath} alt="H&H Signature Renovations" className="h-14 w-auto mx-auto mb-5 brightness-0 invert opacity-80" />
-          <h3 className="text-lg font-serif font-bold text-white mb-1">H&amp;H Signature Renovations</h3>
-          <p className="text-sm mb-6">Where your home's potential comes to life.</p>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-8 text-sm">
-            <a href="tel:5618884488" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Phone className="w-4 h-4" /> (561) 888-4488
-            </a>
-            <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" /> Serving Palm Beach &amp; South Florida
-            </span>
+      <footer className="bg-[#111827] text-white/55 pt-16 pb-28 md:pb-14">
+        <div className="container mx-auto px-4">
+          <div className="grid gap-10 md:gap-8 md:grid-cols-12 mb-12">
+            <div className="md:col-span-4">
+              <img src={logoPath} alt="H&H Signature Renovations" className="h-14 w-auto mb-5 brightness-0 invert opacity-90" />
+              <p className="text-sm leading-relaxed mb-5 max-w-xs">
+                Custom bathroom remodels done right. Founded and led by Tristan Dankert, H&amp;H Signature Renovations builds walk-in showers, soaking tubs, and full renovations with care across Palm Beach County and South Florida.
+              </p>
+              <div className="flex items-center gap-2">
+                <div className="flex text-yellow-400">
+                  {Array(5).fill(0).map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                </div>
+                <span className="text-xs text-white/60">88+ five-star Google reviews</span>
+              </div>
+            </div>
+
+            <div className="md:col-span-2">
+              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Services</h4>
+              <ul className="space-y-2.5 text-sm">
+                {["Full Bathroom Remodels", "Walk-In Showers", "Soaking Tubs", "Tile Installation", "Vanities & Fixtures", "Flooring & Lighting"].map(srv => (
+                  <li key={srv}><a href="#services" className="hover:text-primary transition-colors">{srv}</a></li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="md:col-span-3">
+              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Service Area</h4>
+              <p className="text-sm font-semibold text-white/75 mb-2">Palm Beach County &amp; South Florida</p>
+              <p className="text-sm leading-relaxed text-white/50">
+                West Palm Beach · Boca Raton · Delray Beach · Boynton Beach · Palm Beach Gardens · Jupiter · Wellington · Lake Worth, and surrounding communities.
+              </p>
+            </div>
+
+            <div className="md:col-span-3">
+              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Get in Touch</h4>
+              <a href="tel:5618884488" className="flex items-center gap-2 text-white font-semibold hover:text-primary transition-colors mb-4">
+                <Phone className="w-4 h-4 text-primary" /> (561) 888-4488
+              </a>
+              <a href="#consultation-form" className="inline-flex items-center gap-2 bg-primary text-white hover:bg-primary/90 hover:-translate-y-0.5 font-bold text-sm rounded-lg px-5 py-3 transition-all shadow-lg shadow-primary/25">
+                Request a Free Estimate
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <div className="flex items-center gap-2 mt-5 text-xs text-white/55">
+                <ShieldCheck className="w-4 h-4 text-yellow-400" />
+                Licensed &amp; Insured in Florida
+              </div>
+            </div>
           </div>
-          <div className="border-t border-white/8 pt-6 text-xs text-white/30">
+
+          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-white/40">
             <p>&copy; {new Date().getFullYear()} H&amp;H Signature Renovations. All rights reserved.</p>
+            <div className="flex items-center gap-4">
+              <a href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</a>
+              <span className="text-white/20">|</span>
+              <span>Licensed &amp; Insured · State of Florida</span>
+            </div>
           </div>
         </div>
       </footer>
