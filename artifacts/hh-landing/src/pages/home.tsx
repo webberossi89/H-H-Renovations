@@ -239,66 +239,9 @@ export default function Home() {
                 <p className="text-sm text-white/75 mt-1">No pressure. No obligation. Local Palm Beach team.</p>
               </div>
 
-              {miniSubmitted ? (
-                <div className="px-7 py-10 text-center" data-testid="mini-form-success">
-                  <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-7 h-7 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-serif font-bold text-secondary mb-2">We'll Be In Touch!</h3>
-                  <p className="text-gray-500 text-sm">Expect a call from our team shortly. If you need immediate help, call us now.</p>
-                  <a href="tel:5618884488" className="mt-5 inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
-                    <Phone className="w-4 h-4" /> (561) 888-4488
-                  </a>
-                </div>
-              ) : (
-                <form onSubmit={handleMiniSubmit} className="px-7 py-6 space-y-4">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Your Name</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="John Smith"
-                      value={miniName}
-                      onChange={e => setMiniName(e.target.value)}
-                      className="w-full border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number</label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="(561) 000-0000"
-                      value={miniPhone}
-                      onChange={e => setMiniPhone(e.target.value)}
-                      className="w-full border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1.5">Service Needed</label>
-                    <select
-                      value={miniService}
-                      onChange={e => setMiniService(e.target.value)}
-                      className="w-full border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition text-gray-700"
-                    >
-                      <option value="">Select a service…</option>
-                      <option>Full Bathroom Remodel</option>
-                      <option>Shower / Tub Replacement</option>
-                      <option>Tile Installation</option>
-                      <option>Vanity &amp; Fixtures</option>
-                      <option>Flooring &amp; Lighting</option>
-                      <option>Not sure yet</option>
-                    </select>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-bold rounded-lg py-3 text-sm transition-all shadow-md shadow-primary/25 flex items-center justify-center gap-2"
-                  >
-                    Send → Get My Free Quote
-                  </button>
-                  <p className="text-center text-xs text-gray-400">By submitting you agree to be contacted. No spam.</p>
-                </form>
-              )}
+              <div className="p-3">
+                <YouformEmbed formId="mqxfscuq" />
+              </div>
             </div>
           </motion.div>
         </div>
