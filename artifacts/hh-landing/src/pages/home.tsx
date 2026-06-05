@@ -706,7 +706,9 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid gap-10 md:gap-8 md:grid-cols-12 mb-12">
             <div className="md:col-span-4">
-              <img src={logoPath} alt="H&H Signature Renovations" className="h-14 w-auto mb-5 brightness-0 invert opacity-90" />
+              <div className="inline-flex bg-white rounded-lg p-2.5 mb-5 shadow-sm">
+                <img src={logoPath} alt="H&H Signature Renovations" className="h-12 w-auto object-contain" />
+              </div>
               <p className="text-sm leading-relaxed mb-5 max-w-xs">
                 Custom bathroom remodels done right. Founded and led by Tristan Dankert, H&amp;H Signature Renovations builds walk-in showers, soaking tubs, and full renovations with care across Palm Beach County and South Florida.
               </p>
