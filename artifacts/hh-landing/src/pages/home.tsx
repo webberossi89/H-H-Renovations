@@ -43,11 +43,11 @@ import gallery4 from "@assets/hh_project_photos/photo_31.jpg";
 import gallery5 from "@assets/hh_project_photos/photo_46.jpg";
 import gallery6 from "@assets/hh_project_photos/photo_55.jpg";
 import strip1 from "@assets/hh_project_photos/photo_19.jpg";
-import strip2 from "@assets/hh_project_photos/photo_44.jpg";
+import strip2 from "@assets/hh_project_photos/photo_20.jpg";
 import strip3 from "@assets/hh_project_photos/photo_21.jpg";
 import strip4 from "@assets/hh_project_photos/photo_52.jpg";
 import strip5 from "@assets/hh_project_photos/photo_24.jpg";
-import strip6 from "@assets/hh_project_photos/photo_64.jpg";
+import strip6 from "@assets/hh_project_photos/photo_23.jpg";
 import strip7 from "@assets/hh_project_photos/photo_27.jpg";
 import strip8 from "@assets/hh_project_photos/photo_58.jpg";
 
