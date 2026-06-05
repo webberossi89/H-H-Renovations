@@ -270,29 +270,29 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ── Photo Strip ──────────────────────────────────── */}
+      {/* ── Photo Strip (auto-scrolling marquee) ─────────── */}
       <div className="overflow-hidden bg-gray-100">
-        <div className="flex h-52 md:h-64">
-          {stripPhotos.map((photo, i) => (
-            <div key={i} className="flex-shrink-0 w-48 md:w-64 h-full overflow-hidden">
+        <motion.div
+          className="flex h-52 md:h-64 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+        >
+          {/* Rendered twice only to create a seamless loop; the viewport never
+              shows the same image twice at once. */}
+          {[...stripPhotos, ...stripPhotos].map((photo, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 w-48 md:w-64 h-full overflow-hidden"
+              aria-hidden={i >= stripPhotos.length}
+            >
               <img
                 src={photo}
-                alt={`H&H bathroom project ${i + 1}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                alt={`H&H bathroom project ${(i % stripPhotos.length) + 1}`}
+                className="w-full h-full object-cover"
               />
             </div>
           ))}
-          {/* Duplicate for seamless feel on wide screens */}
-          {stripPhotos.slice(0, 4).map((photo, i) => (
-            <div key={`dup-${i}`} className="flex-shrink-0 w-48 md:w-64 h-full overflow-hidden">
-              <img
-                src={photo}
-                alt={`H&H bathroom project extra ${i + 1}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-          ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* ── Services ─────────────────────────────────────── */}
