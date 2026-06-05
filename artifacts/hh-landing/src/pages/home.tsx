@@ -406,9 +406,16 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
                 Palm Beach Homeowners Trust Us For Quality Renovations
               </h2>
-              <p className="text-white/70 text-lg leading-relaxed mb-10">
-                We're a local Palm Beach team that treats your home with the same respect and precision we'd give our own. Every project is handled with skilled craftsmanship, clear communication, and zero shortcuts.
+              <p className="text-white/70 text-lg leading-relaxed mb-6">
+                Founded and led by <span className="text-white font-semibold">Tristan Dankert</span>, H&amp;H is a local Palm Beach crew that treats your home with the same respect and precision we'd give our own. Tristan stays hands-on from the first walkthrough to the final reveal, so every project gets real attention, honest communication, and zero shortcuts.
               </p>
+              <div className="flex items-center gap-3 mb-10">
+                <div className="w-12 h-12 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold text-base flex-shrink-0">TD</div>
+                <div>
+                  <p className="text-white font-bold text-sm leading-tight">Tristan Dankert</p>
+                  <p className="text-white/50 text-xs">Owner &amp; the H&amp;H crew · Serving Palm Beach</p>
+                </div>
+              </div>
               <div className="space-y-4">
                 {[
                   "Local Palm Beach renovation experts, never a national chain",
