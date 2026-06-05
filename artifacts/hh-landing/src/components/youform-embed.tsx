@@ -49,6 +49,7 @@ export function YouformEmbed({ formId, height = 700 }: YouformEmbedProps) {
       data-width="100%"
       data-height={String(height)}
       data-autoresize
+      data-parent-params="gclid,wbraid,gbraid,fbclid,utm_source,utm_medium,utm_campaign,utm_term,utm_content"
     />
   );
 }
