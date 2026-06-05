@@ -429,7 +429,7 @@ export default function Home() {
                   "End-to-end support from design through final walkthrough",
                 ].map((point, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
                     <p className="text-white/85 font-medium">{point}</p>
                   </div>
                 ))}
@@ -438,20 +438,22 @@ export default function Home() {
 
             <div className="grid grid-cols-2 gap-5">
               {[
-                { icon: Star, value: "88+", label: "Verified Reviews", sub: "Google & Houzz" },
-                { icon: ShieldCheck, value: "100%", label: "Licensed & Insured", sub: "Florida Certified" },
-                { icon: HomeIcon, value: "Local", label: "Palm Beach Team", sub: "Not a franchise" },
-                { icon: BadgeCheck, value: "5★", label: "Average Rating", sub: "Across all platforms" },
-              ].map(({ icon: Icon, value, label, sub }, i) => (
+                { icon: Star, value: "88+", label: "Verified Reviews", sub: "Google & Houzz", accent: "text-yellow-400 fill-current", tint: "bg-yellow-400/15" },
+                { icon: ShieldCheck, value: "100%", label: "Licensed & Insured", sub: "Florida Certified", accent: "text-emerald-400", tint: "bg-emerald-400/15" },
+                { icon: HomeIcon, value: "Local", label: "Palm Beach Team", sub: "Not a franchise", accent: "text-primary", tint: "bg-primary/15" },
+                { icon: Star, value: "5.0", label: "Average Rating", sub: "Across all platforms", accent: "text-yellow-400 fill-current", tint: "bg-yellow-400/15" },
+              ].map(({ icon: Icon, value, label, sub, accent, tint }, i) => (
                 <motion.div
                   key={i}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={stagger(i)}
-                  className="bg-white/8 border border-white/10 rounded-2xl p-6 hover:bg-white/12 transition-colors"
+                  className="bg-white/8 border border-white/10 rounded-2xl p-6 hover:bg-white/12 hover:-translate-y-1 transition-all"
                 >
-                  <Icon className="w-7 h-7 text-primary mb-3" />
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-3 ${tint}`}>
+                    <Icon className={`w-6 h-6 ${accent}`} />
+                  </div>
                   <div className="text-3xl font-serif font-bold text-white mb-1">{value}</div>
                   <div className="text-sm font-semibold text-white/90">{label}</div>
                   <div className="text-xs text-white/45 mt-0.5">{sub}</div>
