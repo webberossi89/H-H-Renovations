@@ -35,20 +35,21 @@ import serviceTile from "@assets/hh_project_photos/photo_03.jpg";
 import serviceVanity from "@assets/hh_project_photos/photo_16.jpg";
 import serviceAda from "@assets/hh_project_photos/photo_33.jpg";
 import serviceFlooring from "@assets/hh_project_photos/photo_57.jpg";
-import gallery1 from "@assets/hh_project_photos/photo_22.jpg";
+import finalCtaBg from "@assets/hh_project_photos/photo_02.jpg";
+import gallery1 from "@assets/hh_project_photos/photo_04.jpg";
 import gallery2 from "@assets/hh_project_photos/photo_25.jpg";
-import gallery3 from "@assets/hh_project_photos/photo_29.jpg";
+import gallery3 from "@assets/hh_project_photos/photo_12.jpg";
 import gallery4 from "@assets/hh_project_photos/photo_31.jpg";
-import gallery5 from "@assets/hh_project_photos/photo_55.jpg";
-import gallery6 from "@assets/hh_project_photos/photo_34.jpg";
+import gallery5 from "@assets/hh_project_photos/photo_46.jpg";
+import gallery6 from "@assets/hh_project_photos/photo_55.jpg";
 import strip1 from "@assets/hh_project_photos/photo_19.jpg";
-import strip2 from "@assets/hh_project_photos/photo_20.jpg";
+import strip2 from "@assets/hh_project_photos/photo_44.jpg";
 import strip3 from "@assets/hh_project_photos/photo_21.jpg";
-import strip4 from "@assets/hh_project_photos/photo_23.jpg";
+import strip4 from "@assets/hh_project_photos/photo_52.jpg";
 import strip5 from "@assets/hh_project_photos/photo_24.jpg";
-import strip6 from "@assets/hh_project_photos/photo_26.jpg";
+import strip6 from "@assets/hh_project_photos/photo_64.jpg";
 import strip7 from "@assets/hh_project_photos/photo_27.jpg";
-import strip8 from "@assets/hh_project_photos/photo_28.jpg";
+import strip8 from "@assets/hh_project_photos/photo_58.jpg";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -84,12 +85,12 @@ export default function Home() {
 
   const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6];
   const galleryAlts = [
-    "Luxury marble bathroom with clawfoot tub",
-    "Modern walk-in shower with floor-to-ceiling tile",
-    "Spa-style bathroom renovation",
-    "Double vanity bathroom remodel",
-    "Custom tile and fixtures upgrade",
-    "Contemporary bathroom with freestanding tub",
+    "Bathroom remodel by H&H Signature Renovations in Palm Beach",
+    "Custom shower and tile work by H&H Signature Renovations",
+    "Bathroom vanity remodel in Palm Beach County",
+    "Walk-in shower remodel by H&H Signature Renovations",
+    "Marble shower detail by H&H Signature Renovations",
+    "Completed bathroom renovation in South Florida",
   ];
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
@@ -137,7 +138,7 @@ export default function Home() {
         <span className="hidden sm:inline">📞&nbsp;</span>
         <strong>Palm Beach's Premier Bathroom Remodelers</strong>
         <span className="mx-3 opacity-50">|</span>
-        Free Estimates — No Obligation
+        Free Estimates · No Obligation
         <span className="mx-3 opacity-50">|</span>
         <a href="tel:5618884488" className="underline underline-offset-2 hover:text-white/80 font-bold">
           Call (561) 888-4488
@@ -189,13 +190,13 @@ export default function Home() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-serif font-bold leading-[1.15] mb-5">
-              Palm Beach Bathroom<br />
-              <span className="text-primary">Remodeling</span> Built<br />
-              With Detail &amp; Care
+              The Palm Beach Bathroom<br />
+              You've Been Picturing,<br />
+              <span className="text-primary">Made Real</span>
             </h1>
 
             <p className="text-lg text-white/85 mb-8 leading-relaxed max-w-lg">
-              Turn your outdated bathroom into a clean, modern, luxury space — without the stress of chasing contractors. Licensed, local, and trusted by Palm Beach homeowners.
+              Imagine walking into a spa-quality bathroom every morning: the tile, the light, the finishes, exactly how you pictured them. We design and build it for you start to finish, with a Palm Beach team you can actually trust.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">
@@ -207,7 +208,7 @@ export default function Home() {
                 </a>
               </div>
               <a href="#consultation-form" className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-lg px-6 py-3.5 text-base border border-white/30 backdrop-blur-sm transition-all" data-testid="button-form-scroll-hero">
-                Get Free Quote
+                Get My Free Estimate
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
@@ -234,9 +235,9 @@ export default function Home() {
           >
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
               <div className="bg-secondary px-7 py-5">
-                <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1">Free Quote · 60 Seconds</p>
-                <h2 className="text-xl font-serif font-bold text-white">Get Your Free Bathroom Estimate</h2>
-                <p className="text-sm text-white/75 mt-1">No pressure. No obligation. Local Palm Beach team.</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1">Free Estimate · 60 Seconds</p>
+                <h2 className="text-xl font-serif font-bold text-white">Tell Us Your Vision</h2>
+                <p className="text-sm text-white/75 mt-1">Share a few details and we'll take it from there. No pressure, ever.</p>
               </div>
 
               <div className="p-3">
@@ -300,18 +301,18 @@ export default function Home() {
               Bathroom Remodeling Services
             </h2>
             <p className="text-gray-500 mt-4 text-base leading-relaxed">
-              From a single fixture upgrade to a complete luxury transformation — we handle every detail.
+              From a single fixture upgrade to a complete luxury transformation, we sweat every detail so you don't have to.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { img: serviceFullRemodel, title: "Full Bathroom Remodels", desc: "Complete transformations from demo to final finishes, tailored to your exact style." },
-              { img: serviceShower, title: "Shower & Tub Replacement", desc: "Upgrade to a luxurious walk-in shower or freestanding tub with premium fixtures." },
-              { img: serviceTile, title: "Tile Installation", desc: "Precision tile work for floors, walls, and showers using porcelain, ceramic, or natural stone." },
-              { img: serviceVanity, title: "Vanity & Fixture Upgrades", desc: "Modern vanities, enhanced storage, and stylish plumbing and lighting fixtures." },
-              { img: serviceAda, title: "ADA / Accessibility Remodels", desc: "Beautiful, functional bathrooms designed for safety, comfort, and aging in place." },
-              { img: serviceFlooring, title: "Flooring, Lighting & Trim", desc: "The finishing touches that pull the whole room together with elegance." },
+              { img: serviceFullRemodel, title: "Full Bathroom Remodels", desc: "From demo day to the final reveal, we transform the entire room into a space that finally feels like yours." },
+              { img: serviceShower, title: "Shower & Tub Replacement", desc: "Trade the cramped, dated enclosure for a walk-in shower or freestanding tub you look forward to every day." },
+              { img: serviceTile, title: "Tile Installation", desc: "Porcelain, ceramic, or natural stone, set by hands that care about every line and every edge." },
+              { img: serviceVanity, title: "Vanity & Fixture Upgrades", desc: "Statement vanities, smarter storage, and fixtures that make an everyday routine feel elevated." },
+              { img: serviceAda, title: "ADA / Accessibility Remodels", desc: "Safe, graceful bathrooms built for comfort and independence, without giving up an ounce of style." },
+              { img: serviceFlooring, title: "Flooring, Lighting & Trim", desc: "The quiet finishing details, flooring, lighting, trim, that make the whole room feel custom." },
             ].map((service, i) => (
               <motion.div
                 key={i}
@@ -329,7 +330,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#203857]/90 via-[#203857]/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-lg font-serif font-bold mb-1">{service.title}</h3>
-                  <p className="text-sm text-white/75 leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden">{service.desc}</p>
+                  <p className="text-sm text-white/80 leading-snug">{service.desc}</p>
                 </div>
                 <div className="absolute top-4 right-4 w-8 h-8 bg-primary/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <ArrowRight className="w-4 h-4 text-white" />
@@ -366,7 +367,7 @@ export default function Home() {
               { n: "02", title: "Consult", desc: "We review your space, style, and budget together." },
               { n: "03", title: "Plan", desc: "Get a clear scope, timeline, and no-surprise quote." },
               { n: "04", title: "Remodel", desc: "Our team builds with care, precision, and cleanliness." },
-              { n: "05", title: "Enjoy", desc: "Step into a bathroom that looks and feels brand new." },
+              { n: "05", title: "Love It", desc: "Step into a space that feels brand new, and finally, completely yours." },
             ].map((step, i) => (
               <motion.div
                 key={i}
@@ -410,7 +411,7 @@ export default function Home() {
               </p>
               <div className="space-y-4">
                 {[
-                  "Local Palm Beach renovation experts — not a national chain",
+                  "Local Palm Beach renovation experts, never a national chain",
                   "Licensed, insured, and fully experienced professionals",
                   "88+ Google Reviews with an excellent rating",
                   "Known for communication, cleanliness, and attention to detail",
@@ -465,7 +466,7 @@ export default function Home() {
             {[
               { text: "Extremely professional, takes great care and effort to make sure all the minute details are absolutely perfect. Was very prompt and clear with exactly what needed to be done for our bathroom and kitchen…", author: "Kevin Foster", initial: "KF" },
               { text: "Tristan and his team were amazing to work with. They renovated my house in Boca… the tile work everything was top notch. Tristan was very communicative and made the whole process stress-free.", author: "Andrew Pernal", initial: "AP" },
-              { text: "Beautiful work! Very professional and they clean up after themselves! My new bathroom looks absolutely stunning — I couldn't be happier with the results.", author: "Kim Marie", initial: "KM" },
+              { text: "Beautiful work! Very professional and they clean up after themselves! My new bathroom looks absolutely stunning. I couldn't be happier with the results.", author: "Kim Marie", initial: "KM" },
               { text: "Very professional, fair and very neat! Now I have a beautiful Kitchen & Bathroom for my family to enjoy! H&H delivered everything they promised and more.", author: "Anthony Wooster", initial: "AW" },
             ].map((review, i) => (
               <motion.div
@@ -544,8 +545,8 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-10">
-            <a href="#consultation-form" className="inline-flex items-center gap-2 text-primary font-bold hover:underline text-sm">
-              Love what you see? Get your free estimate
+            <a href="#consultation-form" className="inline-flex items-center gap-2 bg-primary text-white font-bold rounded-lg px-7 py-3.5 hover:bg-primary/90 hover:-translate-y-0.5 transition-all shadow-lg shadow-primary/25">
+              Love what you see? Start your project
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -618,7 +619,7 @@ export default function Home() {
               { q: "Are you licensed and insured?", a: "Yes. Our team is composed of licensed, insured, and experienced professionals operating in Palm Beach County and South Florida." },
               { q: "What areas do you serve?", a: "We serve the Palm Beaches and surrounding areas throughout South Florida, including Boca Raton, Delray Beach, West Palm Beach, and nearby communities." },
               { q: "Can you help me choose the design?", a: "Absolutely. We emphasize tailored solutions and take time to understand each homeowner's style, preferences, and lifestyle goals before recommending finishes." },
-              { q: "How do I get started?", a: "Call (561) 888-4488 or fill out the consultation form above — we'll be in touch promptly to discuss your project." },
+              { q: "How do I get started?", a: "Call (561) 888-4488 or fill out the consultation form above and we'll be in touch promptly to discuss your project." },
             ].map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="bg-gray-50 border border-gray-100 rounded-xl px-6 data-[state=open]:border-primary/30 data-[state=open]:bg-blue-50/30 transition-colors">
                 <AccordionTrigger className="text-base font-bold text-secondary hover:text-primary transition-colors text-left py-5 hover:no-underline">{faq.q}</AccordionTrigger>
@@ -638,7 +639,7 @@ export default function Home() {
               Proudly Serving Palm Beach County &amp; South Florida
             </h2>
             <p className="text-white/60 mt-3 text-sm max-w-xl mx-auto">
-              H&amp;H Signature Renovations serves homeowners across the Palm Beach area. Don't see your city? Call us — we likely serve it.
+              H&amp;H Signature Renovations serves homeowners across the Palm Beach area. Don't see your city? Call us, we likely serve it.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
@@ -666,16 +667,16 @@ export default function Home() {
       {/* ── Final CTA ────────────────────────────────────── */}
       <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={gallery3} alt="Luxury bathroom" className="w-full h-full object-cover" style={{ objectPosition: "center 40%" }} />
+          <img src={finalCtaBg} alt="Luxury bathroom remodel by H&H Signature Renovations" className="w-full h-full object-cover" style={{ objectPosition: "center 40%" }} />
           <div className="absolute inset-0 bg-secondary/88" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-10 max-w-4xl">
           <p className="text-primary text-sm font-bold uppercase tracking-widest mb-4">Ready to Start?</p>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
-            Let's Build The Bathroom<br />You've Been Wanting
+            Let's Build the Bathroom<br />You Actually Want to Wake Up To
           </h2>
           <p className="text-white/70 text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Modern shower. Better tile. Cleaner finishes. Work with a local Palm Beach team known for craftsmanship, communication, and attention to detail.
+            Warm light. Tile you'll run your hand across just because. Finishes that still feel right years from now. Tell us what you're picturing and we'll make it real.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:5618884488" className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg px-8 py-4 text-lg transition-all shadow-xl shadow-primary/30" data-testid="button-call-footer">
