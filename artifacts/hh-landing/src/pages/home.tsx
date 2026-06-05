@@ -32,8 +32,8 @@ import heroBg from "@assets/hh_project_photos/photo_22.jpg";
 import serviceFullRemodel from "@assets/hh_project_photos/photo_15.jpg";
 import serviceShower from "@assets/hh_project_photos/photo_17.jpg";
 import serviceTile from "@assets/hh_project_photos/photo_03.jpg";
-import serviceVanity from "@assets/hh_project_photos/photo_16.jpg";
-import serviceAda from "@assets/hh_project_photos/photo_33.jpg";
+import serviceVanity from "@assets/hh_project_photos/photo_13.jpg";
+import serviceTub from "@assets/hh_project_photos/photo_20.jpg";
 import serviceFlooring from "@assets/hh_project_photos/photo_57.jpg";
 import finalCtaBg from "@assets/hh_project_photos/photo_02.jpg";
 import gallery1 from "@assets/hh_project_photos/photo_04.jpg";
@@ -43,7 +43,7 @@ import gallery4 from "@assets/hh_project_photos/photo_31.jpg";
 import gallery5 from "@assets/hh_project_photos/photo_46.jpg";
 import gallery6 from "@assets/hh_project_photos/photo_55.jpg";
 import strip1 from "@assets/hh_project_photos/photo_19.jpg";
-import strip2 from "@assets/hh_project_photos/photo_20.jpg";
+import strip2 from "@assets/hh_project_photos/photo_16.jpg";
 import strip3 from "@assets/hh_project_photos/photo_21.jpg";
 import strip4 from "@assets/hh_project_photos/photo_52.jpg";
 import strip5 from "@assets/hh_project_photos/photo_24.jpg";
@@ -311,7 +311,7 @@ export default function Home() {
               { img: serviceShower, title: "Shower & Tub Replacement", desc: "Trade the cramped, dated enclosure for a walk-in shower or freestanding tub you look forward to every day." },
               { img: serviceTile, title: "Tile Installation", desc: "Porcelain, ceramic, or natural stone, set by hands that care about every line and every edge." },
               { img: serviceVanity, title: "Vanity & Fixture Upgrades", desc: "Statement vanities, smarter storage, and fixtures that make an everyday routine feel elevated." },
-              { img: serviceAda, title: "ADA / Accessibility Remodels", desc: "Safe, graceful bathrooms built for comfort and independence, without giving up an ounce of style." },
+              { img: serviceTub, title: "Freestanding & Soaking Tubs", desc: "Sink into a freestanding soaking tub, the kind that turns the end of a long day into the best part of it." },
               { img: serviceFlooring, title: "Flooring, Lighting & Trim", desc: "The quiet finishing details, flooring, lighting, trim, that make the whole room feel custom." },
             ].map((service, i) => (
               <motion.div
