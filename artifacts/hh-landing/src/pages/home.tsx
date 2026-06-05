@@ -29,7 +29,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 
 import heroBg from "@assets/hh_project_photos/photo_22.jpg";
-import serviceFullRemodel from "@assets/hh_project_photos/photo_15.jpg";
+import serviceFullRemodel from "@assets/hh_project_photos/photo_24.jpg";
 import serviceShower from "@assets/hh_project_photos/photo_17.jpg";
 import serviceTile from "@assets/hh_project_photos/photo_03.jpg";
 import serviceVanity from "@assets/hh_project_photos/photo_13.jpg";
@@ -37,7 +37,7 @@ import serviceTub from "@assets/hh_project_photos/photo_55.jpg";
 import serviceFlooring from "@assets/hh_project_photos/photo_57.jpg";
 import finalCtaBg from "@assets/hh_project_photos/photo_02.jpg";
 import gallery1 from "@assets/hh_project_photos/photo_04.jpg";
-import gallery2 from "@assets/hh_project_photos/photo_25.jpg";
+import gallery2 from "@assets/hh_project_photos/photo_29.jpg";
 import gallery3 from "@assets/hh_project_photos/photo_12.jpg";
 import gallery4 from "@assets/hh_project_photos/photo_31.jpg";
 import gallery5 from "@assets/hh_project_photos/photo_46.jpg";
@@ -46,7 +46,7 @@ import strip1 from "@assets/hh_project_photos/photo_19.jpg";
 import strip2 from "@assets/hh_project_photos/photo_16.jpg";
 import strip3 from "@assets/hh_project_photos/photo_21.jpg";
 import strip4 from "@assets/hh_project_photos/photo_52.jpg";
-import strip5 from "@assets/hh_project_photos/photo_24.jpg";
+import strip5 from "@assets/hh_project_photos/photo_15.jpg";
 import strip6 from "@assets/hh_project_photos/photo_23.jpg";
 import strip7 from "@assets/hh_project_photos/photo_27.jpg";
 import strip8 from "@assets/hh_project_photos/photo_58.jpg";
