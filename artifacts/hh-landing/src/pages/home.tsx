@@ -253,14 +253,17 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
             {[
-              { value: "88+", label: "Google Reviews" },
-              { value: "5★", label: "Average Rating" },
-              { value: "100%", label: "Licensed & Insured" },
-              { value: "Local", label: "Palm Beach Experts" },
-            ].map(({ value, label }, i) => (
-              <div key={i} className="px-6 py-6 text-center">
-                <div className="text-2xl font-serif font-bold text-primary">{value}</div>
-                <div className="text-sm text-white/65 mt-0.5 font-medium">{label}</div>
+              { value: "88+", label: "Google Reviews", Icon: Star, accent: "text-yellow-400", fill: true },
+              { value: "5.0", label: "Average Rating", Icon: Star, accent: "text-yellow-400", fill: true },
+              { value: "100%", label: "Licensed & Insured", Icon: ShieldCheck, accent: "text-primary", fill: false },
+              { value: "Local", label: "Palm Beach Experts", Icon: HomeIcon, accent: "text-primary", fill: false },
+            ].map(({ value, label, Icon, accent, fill }, i) => (
+              <div key={i} className="px-6 py-7 text-center">
+                <div className="flex items-center justify-center gap-2 mb-1">
+                  <Icon className={`w-5 h-5 ${accent} ${fill ? "fill-current" : ""}`} />
+                  <div className="text-2xl md:text-3xl font-serif font-bold text-white">{value}</div>
+                </div>
+                <div className="text-sm text-white/70 font-medium">{label}</div>
               </div>
             ))}
           </div>
